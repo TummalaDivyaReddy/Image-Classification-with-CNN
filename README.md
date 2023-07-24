@@ -193,4 +193,4 @@ plt.show()
 The training and validation loss over each epoch are plotted using matplotlib.pyplot. Similarly, the training and validation accuracy over each epoch are also plotted for visualization.
 
 
-[Youtube link:] ()
+[Youtube link:] (https://youtu.be/jzdjtIIAmrY)
