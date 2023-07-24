@@ -1,6 +1,6 @@
 # Image-Classification-with-CNN
 
-code file: [Image-Classification-with-CNN](Image-Classification-with-CNN)
+code file: [Image-Classification-with-CNN](Image_Classification_with_CNN.ipynb)
 
 Convolutional Neural Networks (CNNs) are a type of deep learning algorithm that are commonly used for image classification.
 
@@ -137,3 +137,53 @@ The Conv2D layers apply convolutional filters to extract features from the input
 For compilation the SGD optimizer (Stochastic Gradient Descent) is used for categorical cross-entropy loss function and accuracy as the evaluation metric.
 The model is trained using the fit method on the training data and the history object stores the training and validation loss and accuracy for each epoch.
 The model is evaluated on the test data to get the final accuracy.
+
+## Did the performance change?
+
+YES! The performance has changed. From the output I observe that there is a Decrease in loss and increase in the accuracy respective to each epoch and even has an overall increase in accuracy.
+
+## Predict the first 4 images of the test data using the above model. Then, compare with the actual label for those 4 images to check whether or not the model has predicted correctly.
+
+```ruby
+# Predict the first 4 images in the test data
+predictions = model.predict(X_test[:4])
+predicted_labels = np.argmax(predictions, axis=1)
+
+
+# Actual labels for the first 4 images
+actual_labels = np.argmax(y_test[:4], axis=1)
+
+
+print("Predicted Labels:", predicted_labels)
+print("Actual Labels:", actual_labels)
+
+```
+
+The model is used to predict the class labels for the first 4 test images and the predicted labels are then compared with the actual labels to check the model's accuracy on these samples.
+
+## Visualize Loss and Accuracy using the history object
+
+```ruby
+# Plot training and validation loss
+plt.plot(history.history['loss'], label='Training Loss')
+plt.plot(history.history['val_loss'], label='Validation Loss')
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.legend()
+plt.show()
+
+
+# Plot training and validation accuracy
+plt.plot(history.history['accuracy'], label='Training Accuracy')
+plt.plot(history.history['val_accuracy'], label='Validation Accuracy')
+plt.xlabel('Epoch')
+plt.ylabel('Accuracy')
+plt.legend()
+plt.show()
+
+```
+
+The training and validation loss over each epoch are plotted using matplotlib.pyplot. Similarly, the training and validation accuracy over each epoch are also plotted for visualization.
+
+
+[Youtube link:] ()
