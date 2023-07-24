@@ -130,12 +130,19 @@ print("Accuracy: %.2f%%" % (scores[1] * 100))
 
 ```
 The first line imports the NumPy library, which is used for scientific computing. The next two lines import the CIFAR-10 dataset and the Keras library. Keras is a high-level neural network API that makes it easy to build and train neural networks.matplotlib.pyplot is used for data visualization.
+
 The seed and np.random.seed(seed) ensure reproducibility by fixing the random number generator's seed.
+
 The next few lines load the data and normalize it. This means that the values of each pixel in the images are scaled from 0 to 1. This is necessary for the neural network to work properly.
+
 The model is created using the Sequential API from Keras, which allows us to stack layers one after another and it consists of a series of convolutional layers, max-pooling layers, and fully connected (dense) layers.
+
 The Conv2D layers apply convolutional filters to extract features from the input images, maxPooling2D layers downsample the feature maps to reduce spatial dimensions, flatten layer is used to convert the 2D feature maps into a 1D vector before feeding it to the dense layers, dense layers are fully connected layers that perform classification based on the features learned by the previous layers,dropout layers are used for regularization to prevent overfitting.
+
 For compilation the SGD optimizer (Stochastic Gradient Descent) is used for categorical cross-entropy loss function and accuracy as the evaluation metric.
+
 The model is trained using the fit method on the training data and the history object stores the training and validation loss and accuracy for each epoch.
+
 The model is evaluated on the test data to get the final accuracy.
 
 ## Did the performance change?
